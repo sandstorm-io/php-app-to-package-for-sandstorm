@@ -125,8 +125,27 @@
           </ul>
         </div>
       </div>
-      <hr>
 
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Instance lifetime: short</h2>
+          <p>In Sandstorm, apps are auto-killed at some point.</p>
+        </div>
+
+        <div class="col-md-4">
+          <h2>Background processes</h2>
+          <p>If you need a background process, write your own
+            script.</p>
+        </div>
+
+        <div class="col-md-4">
+          <h2>Cron jobs</h2>
+          <p>If you need time-based background processing, that might
+            be tough for now.
+          </p>
+        </div>
+      </div>
+      <hr>
       <footer>
       </footer>
     </div> <!-- /container -->
