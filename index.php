@@ -121,7 +121,7 @@
             <li>Host: <tt>localhost</tt> (not 127.0.0.1)</li>
             <li>Username: <tt>root</tt></li>
             <li>Password: <tt>funtime</tt></li>
-            <li>Database: Whatever you create. See the docs.</li>
+            <li>Database: Whatever you create! More info in <tt>vagrant-spk</tt> docs.</li>
           </ul>
         </div>
       </div>
