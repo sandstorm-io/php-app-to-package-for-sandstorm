@@ -55,7 +55,9 @@
             <li>Current user hex user ID (stable; store this in the database): <tt><?php echo $_SERVER['X-Sandstorm-User-Id']; ?></tt></li>
             <li>Current user privilege level (see the docs): <tt><?php echo $_SERVER['X-Sandstorm-Permissions]; ?></tt></li>
           </ul>
-          <p><a class="btn btn-default" href="https://github.com/sandstorm-io/sandstorm/wiki/User-Authentication" role="button">View user authentication docs &raquo;</a></p>
+          <p>You can read the
+          full <a href="https://github.com/sandstorm-io/sandstorm/wiki/User-Authentication">user
+          authentication documentation</a>.</p>
         </div>
         <div class="col-md-4">
           <h2>Writable data in /var</h2>
@@ -80,12 +82,28 @@
       <div class="row">
         <div class="col-md-4">
           <h2>External network access</h2>
-          <p>By default, the app has no network access. That means the following will fail:</p>
-          <p>FIXME php_curl() something.</p>
+          <p>There are two ways to access the network from within
+            Sandstorm. For now, they are both somewhat difficult, so
+            we recommend not making outbound connections from a PHP
+            app yet.
+          </p>
+          <ol>
+            <li>If you are making an outbound HTTP request, use Jason Paryani's as-yet-unpublished
+              <tt>sandstorm-curl</tt>.</li>
+            <li>If you need more than that, use
+              <a href="https://github.com/sandstorm-io/sandstorm/blob/master/src/sandstorm/ip.capnp">
+                Sandstorm's IP networking cap'n definition
+              </a>.
+            </li>
+          </ol>
         </div>
         <div class="col-md-4">
           <h2>Outbound email</h2>
-          <p>Mumble.</p>
+          <p>It would be nice if there were an easy way to send outbound email
+            from PHP apps within Sandstorm. For now, it requires using Cap'n
+            Proto.</p>
+          <p>See the <a href="https://github.com/sandstorm-io/sandstorm/wiki/Using-Email-From-Your-Sandstorm-App">
+              Sandstorm email documentation</a> for more.</p>
         </div>
         <div class="col-md-4">
           <h2>MySQL</h2>
