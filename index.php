@@ -39,7 +39,7 @@
       <div class="container">
         <h1>Hi! I'm PHP!</h1>
         <p>This demo app showcases some normal PHP functionality when running in Sandstorm. This app was packaged with <tt>vagrant-spk</tt>, which you can use for your app too.</p>
-        <p><a class="btn btn-primary btn-lg" href="https://github.com/paulproteus/php-app-to-package-for-sandstorm" role="button">View this app's source &raquo;</a> <a class="btn btn-default btn-lg" href="https://github.com/sandstorm-io/sandstorm/wiki/User-Authentication" role="button">View vagrant-spk docs &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href="https://github.com/paulproteus/php-app-to-package-for-sandstorm" role="button">View this app's source &raquo;</a> <a class="btn btn-default btn-lg" href="https://github.com/sandstorm-io/sandstorm/wiki/Porting-an-app-with-vagrant-spk" role="button">View vagrant-spk docs &raquo;</a></p>
 </p>
       </div>
     </div>
