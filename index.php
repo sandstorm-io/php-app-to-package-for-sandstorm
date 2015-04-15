@@ -14,7 +14,7 @@
     <link href="bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="jumbotron.css" rel="stylesheet">
+    <!-- <link href="jumbotron.css" rel="stylesheet"> -->
 
   </head>
 
@@ -51,9 +51,9 @@
           <h2>Sandstorm user</h2>
           <p>Here's some quick info about the Sandstorm user viewing this page.</p>
           <ul>
-            <li>Current user display name (purely informational): <tt><?php echo $_SERVER['X-Sandstorm-Username']; ?></tt></li>
-            <li>Current user hex user ID (stable; store this in the database): <tt><?php echo $_SERVER['X-Sandstorm-User-Id']; ?></tt></li>
-            <li>Current user privilege level (see the docs): <tt><?php echo $_SERVER['X-Sandstorm-Permissions]; ?></tt></li>
+            <li>Current user display name (purely informational): <tt><?php echo $_SERVER['HTTP_X_SANDSTORM_USERNAME']; ?></tt></li>
+            <li>Current user hex user ID (stable; store this in the database): <tt><?php echo $_SERVER['HTTP_X_SANDSTORM_USER_ID']; ?></tt></li>
+            <li>Current user privilege level (see the docs): <tt><?php echo $_SERVER['HTTP_X_SANDSTORM_PERMISSIONS']; ?></tt></li>
           </ul>
           <p>You can read the
           full <a href="https://github.com/sandstorm-io/sandstorm/wiki/User-Authentication">user
@@ -63,13 +63,14 @@
           <h2>Writable data in /var</h2>
           <p>When this app starts, it creates a file called <tt>/var/number.txt</tt>.</p>
           <!-- Make the file if necessary. -->
-          <?php if ( ! file_exists("/var/number.txt") ) { $fp = open('/var/number.txt', 'w'); fwrite($fp, "0"); fclose($fp); } ?>
+          <?php if ( ! file_exists("/var/number.txt") ) { $fp = fopen('/var/number.txt', 'w'); fwrite($fp, "0"); fclose($fp); } ?>
           <!-- Increment it! This is a page view! -->
-          <?php $fp = open('/var/number.txt', 'r'); $s = fread($fp, 1000); $s = intval($s) + 1; fclose($fp);
-                $fp = open('/var/number.txt', 'w'); fwrite($fp, $s); fclose($fp);
-                ?>
+          <?php
+          $fp = fopen('/var/number.txt', 'r'); $s = fread($fp, 1000); $new_s = intval($s) + 1; fclose($fp);
+          $fp = fopen('/var/number.txt', 'w'); fwrite($fp, $new_s); fclose($fp);
+          ?>
           <!-- Now print it out, using the simplistic and convenient PHP readfile(). -->
-          <p>Current contents of the file: <?php echo readfile("/var/number.txt"); ?></p>
+          <p>Current contents of the file: <?php readfile("/var/number.txt"); ?></p>
           <p>Every time you reload this page within an instance of the app, the number goes up.</p>
         </div>
         <div class="col-md-4">
@@ -114,13 +115,13 @@
           <?php
              $db = mysqli_connect("localhost", "root", "", "") or die("Error " . mysqli_error($db));
              $result = mysqli_query($db , "SELECT 1+1;");
-             ?>
-          <p><tt><?php echo $result; ?></tt></p>
+          ?>
+          <p><tt><?php echo $result->fetch_row()[0]; ?></tt></p>
           <p>Every app instance can use MySQL with this information:</p>
           <ul>
             <li>Host: <tt>localhost</tt> (not 127.0.0.1)</li>
             <li>Username: <tt>root</tt></li>
-            <li>Password: <tt>funtime</tt></li>
+            <li>No password</li>
             <li>Database: Whatever you create! More info in <tt>vagrant-spk</tt> docs.</li>
           </ul>
         </div>
