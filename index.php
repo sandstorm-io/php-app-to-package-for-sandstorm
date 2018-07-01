@@ -39,7 +39,7 @@
       <div class="container">
         <h1>Hi! I'm PHP!</h1>
         <p>This demo app showcases some normal PHP functionality when running in Sandstorm. This app was packaged with <tt>vagrant-spk</tt>, which you can use for your app too.</p>
-        <p><a class="btn btn-primary btn-lg" href="https://github.com/paulproteus/php-app-to-package-for-sandstorm" role="button">View this app's source &raquo;</a> <a class="btn btn-default btn-lg" href="https://github.com/sandstorm-io/sandstorm/wiki/Porting-an-app-with-vagrant-spk" role="button">View vagrant-spk docs &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href="https://github.com/sandstorm-io/php-app-to-package-for-sandstorm" role="button">View this app's source &raquo;</a> <a class="btn btn-default btn-lg" href="https://docs.sandstorm.io/en/latest/vagrant-spk/customizing/" role="button">View vagrant-spk docs &raquo;</a></p>
 </p>
       </div>
     </div>
@@ -56,7 +56,7 @@
             <li>Current user privilege level (see the docs): <tt><?php echo $_SERVER['HTTP_X_SANDSTORM_PERMISSIONS']; ?></tt></li>
           </ul>
           <p>You can read the
-          full <a href="https://github.com/sandstorm-io/sandstorm/wiki/User-Authentication">user
+          full <a href="https://docs.sandstorm.io/en/latest/developing/auth/">user
           authentication documentation</a>.</p>
         </div>
         <div class="col-md-4">
@@ -103,7 +103,7 @@
           <p>It would be nice if there were an easy way to send outbound email
             from PHP apps within Sandstorm. For now, it requires using Cap'n
             Proto.</p>
-          <p>See the <a href="https://github.com/sandstorm-io/sandstorm/wiki/Using-Email-From-Your-Sandstorm-App">
+          <p>See the <a href="https://docs.sandstorm.io/en/latest/developing/email-from-apps/">
               Sandstorm email documentation</a> for more.</p>
         </div>
         <div class="col-md-4">
