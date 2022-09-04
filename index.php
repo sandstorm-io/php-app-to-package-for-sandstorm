@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <base target="_blank">
     <link rel="icon" href="../../favicon.ico">
 
     <title>Sample Sandstorm PHP app</title>
