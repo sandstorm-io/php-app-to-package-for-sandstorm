@@ -84,13 +84,10 @@
         <div class="col-md-4">
           <h2>External network access</h2>
           <p>There are two ways to access the network from within
-            Sandstorm. For now, they are both somewhat difficult, so
-            we recommend not making outbound connections from a PHP
-            app yet.
+            Sandstorm.
           </p>
           <ol>
-            <li>If you are making an outbound HTTP request, use Jason Paryani's as-yet-unpublished
-              <tt>sandstorm-curl</tt>.</li>
+            <li>If you are making an outbound HTTP request, use Ian Denhardt's <a href="https://github.com/zenhack/powerbox-http-proxy"><tt>powerbox-http-proxy</tt></a>.</li>
             <li>If you need more than that, use
               <a href="https://github.com/sandstorm-io/sandstorm/blob/master/src/sandstorm/ip.capnp">
                 Sandstorm's IP networking cap'n definition
@@ -141,8 +138,9 @@
 
         <div class="col-md-4">
           <h2>Cron jobs</h2>
-          <p>If you need time-based background processing, that might
-            be tough for now.
+          <p>Sandstorm supports a scheduled task API, documented in
+		      <a href="https://github.com/sandstorm-io/sandstorm/blob/master/src/sandstorm/grain.capnp">
+		        Sandstorm's grain cap'n definition</a>.
           </p>
         </div>
       </div>
