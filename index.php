@@ -88,7 +88,7 @@
             Sandstorm.
           </p>
           <ol>
-            <li>If you are making an outbound HTTP request, use Ian Denhardt's <a href="https://github.com/zenhack/powerbox-http-proxy"><tt>powerbox-http-proxy</tt></a>.</li>
+            <li>If you are making an outbound HTTP request, use <a href="https://github.com/sandstorm-org/powerbox-http-proxy"><tt>powerbox-http-proxy</tt></a>.</li>
             <li>If you need more than that, use
               <a href="https://github.com/sandstorm-io/sandstorm/blob/master/src/sandstorm/ip.capnp">
                 Sandstorm's IP networking cap'n definition
